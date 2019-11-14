@@ -6,6 +6,17 @@ import router from './router'
 
 Vue.config.productionTip = false
 
+Vue.component('li-item', {
+  // eslint-disable-next-line no-multi-str
+  template: '\
+    <li>\
+      {{ title }}\
+      <button v-on:click="$emit(\'remove\')">Remove</button>\
+    </li>\
+  ',
+  props: ['title']
+})
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
